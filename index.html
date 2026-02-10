@@ -7,9 +7,16 @@
 </head>
 <body>
     <script>
-      for(let i = 0; i < 100; i++){
-        document.querySelector("body").appendChild(document.createElement("div"))
-      }
+        let parent = document.querySelector("body");
+        for(let i = 0; i < 1000; i++){
+            let div = document.createElement("div");
+            div.style.backgroundColor = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")"
+            div.style.width = "10px";
+            div.style.height = "10px";
+            div.style.padding = "10px";
+            parent.appendChild(div);
+            parent = div;
+        }
     </script>
 </body>
 </html>
