@@ -6,17 +6,25 @@
     <title>Rainbow</title>
 </head>
 <body>
+    follow me
     <script>
         let parent = document.querySelector("body");
-        for(let i = 0; i < 10000; i++){
+        function create(){
             let div = document.createElement("div");
             div.style.backgroundColor = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")"
-            div.style.width = "10px";
-            div.style.height = "10px";
-            div.style.padding = "10px";
+            div.style.width = Math.random() * 5 + "px";
+            div.style.height = Math.random() * 5 + "px";
+            div.style.padding = Math.random() * 5 + "px";
             parent.appendChild(div);
             parent = div;
+            let pos = div.getBoundingClientRect();
+            if(pos.x > (innerWidth * 1.5) || pos.y > (innerHeight * 1.5)){
+                while(true)location.reload(1)
+            }
+            requestAnimationFrame(create)
         }
+        
+        create()
     </script>
 </body>
 </html>
