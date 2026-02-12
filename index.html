@@ -6,10 +6,7 @@
     <title>Rainbow</title>
 </head>
 <body>
-    follow me
-    use the link
-    and apply these transformations:
-    todo
+    follow me to the pot of gold lmao this is cringy as heck what am i even writing here but i guess u should follow
     <script>
         let parent = document.querySelector("body");
         function create(){
@@ -21,11 +18,10 @@
             parent.appendChild(div);
             parent = div;
             let pos = div.getBoundingClientRect();
-            if(pos.x > (innerWidth * 1.5) || pos.y > (innerHeight * 1.5)){
-                while(true)location.reload(1)
-            }
             requestAnimationFrame(create)
         }
+
+        setTimeout(()=>while(true)location.reload(1), 5000)
         
         create()
     </script>
